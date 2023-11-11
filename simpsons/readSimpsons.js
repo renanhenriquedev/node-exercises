@@ -66,4 +66,47 @@ const fs = require('fs').promises
 //     }
 
 // }
-// getDataByID('6');
+// getDataByID('10');
+
+
+// Exercise 4
+
+// const createNewArchive = async () => {
+
+//     const data = await fs.readFile(path.resolve(__dirname, 'simpsons.json'))
+//     const response = JSON.parse(data)
+
+//     const newData = []
+//     for (let i = 0; i < 4; i += 1) {
+//         newData.push(response[i])
+//         console.log(newData);
+//     }
+
+//     const write = JSON.stringify(newData);
+
+//     fs.writeFile(path.resolve(__dirname,'simpsonFamily.json'), write, (err) => {
+//         if (err) throw err;
+//         console.log('O arquivo foi criado!');
+//     })
+
+// }
+
+// createNewArchive();
+
+// Exercise 5
+
+const addNewCharacter = async () => {
+
+    const data = await fs.readFile(path.resolve(__dirname, 'simpsonFamily.json'))
+    const response = JSON.parse(data)
+
+    const newResponse = JSON.stringify([...response, {id: "5", name: "Nelson Muntz"}])
+
+    fs.writeFile(path.resolve(__dirname,'simpsonFamily.json'), newResponse, (err) => {
+            if (err) throw err;
+        console.log('O arquivo foi criado!');
+            })
+
+}
+
+addNewCharacter()
