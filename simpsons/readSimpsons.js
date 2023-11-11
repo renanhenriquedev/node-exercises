@@ -95,18 +95,47 @@ const fs = require('fs').promises
 
 // Exercise 5
 
-const addNewCharacter = async () => {
+// const addNewCharacter = async () => {
 
-    const data = await fs.readFile(path.resolve(__dirname, 'simpsonFamily.json'))
-    const response = JSON.parse(data)
+//     const data = await fs.readFile(path.resolve(__dirname, 'simpsonFamily.json'))
+//     const response = JSON.parse(data)
 
-    const newResponse = JSON.stringify([...response, {id: "5", name: "Nelson Muntz"}])
+//     const newResponse = JSON.stringify([...response, {id: "5", name: "Nelson Muntz"}])
 
-    fs.writeFile(path.resolve(__dirname,'simpsonFamily.json'), newResponse, (err) => {
-            if (err) throw err;
-        console.log('O arquivo foi criado!');
-            })
+//     fs.writeFile(path.resolve(__dirname,'simpsonFamily.json'), newResponse, (err) => {
+//             if (err) throw err;
+//         console.log('O arquivo foi criado!');
+//             })
+
+// }
+
+// addNewCharacter()
+
+// Exercise 6
+
+// const getDataByID = async () => {
+//     try {
+//         const data = await fs.readFile(path.resolve(__dirname, 'simpsonFamily.json'));
+//         let response = JSON.parse(data);
+
+//         for (let i = 0; i < response.length; i += 1) {
+//             if ('5' === response[i].id.toString()) {
+//                 response.splice(i, 1, { id: 5, name: "Maggie Simpson" });
+//                 console.log(response);
+//                 break; 
+//             }
+//         }
+//         const newArchive = JSON.stringify(response);
+//         await fs.writeFile(path.resolve(__dirname, 'simpsonFamily.json'), newArchive);
+//         console.log("Dados atualizados com sucesso!");
+//     } catch (error) {
+//         console.error(`O id 5 digitado não existe ou já foi apagado`);
+//     }
+// };
+
+// getDataByID();
+
+
+function fibonnaci () {
 
 }
-
-addNewCharacter()
